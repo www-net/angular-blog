@@ -9,11 +9,11 @@ import { AuthService } from '../../services/auth.service';
 })
 export class AdminLayoutComponent {
 
-  constructor(private router: Router, private auth: AuthService){}
+  constructor(private router: Router, public auth: AuthService){}
 
   logout(event: Event) {
     event.preventDefault()
-    this.auth.logout
+    this.auth.logout()
     this.router.navigate(['/admin', 'login'])
   }
 
