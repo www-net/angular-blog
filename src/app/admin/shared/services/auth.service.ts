@@ -47,6 +47,10 @@ export class AuthService {
   private handleError(error: HttpErrorResponse) {
     const {message} = error.error.error
 
+    console.log(error)
+    console.log(error.error)
+    console.log(message)
+
     switch(message) {
       case 'INVALID_EMAIL':
         this.error$.next('Неверный email')
@@ -54,8 +58,11 @@ export class AuthService {
       case 'INVALID_PASSWORD':
         this.error$.next('Неверный пароль')
         break
-      case 'EMAIL_ NOT_FOUND':
+      case 'EMAIL_NOT_FOUND':
         this.error$.next('Такого email нет')
+        break
+      case 'INVALID_LOGIN_CREDENTIALS':
+        this.error$.next('Введены неверные данные для входа в систему')
         break
     }
 
