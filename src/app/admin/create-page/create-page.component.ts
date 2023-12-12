@@ -30,6 +30,8 @@ submit() {
     text: this.form.value.text,
     date: new Date()
   }
+
+  console.log(post.text)
 }
 
 }
