@@ -11,7 +11,7 @@ export class PostsService {
   constructor(private http: HttpClient){}
 
   create(post: Post): Observable<Post> {
-    return this.http.post (`${environment.fbDbUrl}/posts.json`, post)
+    return this.http.post(`${environment.fbDbUrl}/posts.json`, post)
       .pipe(
         map((response: fbCreateResponse) => {
           return {
