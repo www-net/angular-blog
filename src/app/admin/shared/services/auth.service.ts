@@ -1,4 +1,4 @@
-import { FbAuthResponse, User } from './../../../shared/interfaces';
+import { User } from './../../../shared/interfaces';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, Subject, catchError, tap, throwError } from 'rxjs';
@@ -48,10 +48,6 @@ export class AuthService {
 
   private handleError(error: HttpErrorResponse) {
     const {message} = error.error.error
-
-    console.log(error)
-    console.log(error.error)
-    console.log(message)
 
     switch(message) {
       case 'INVALID_EMAIL':
