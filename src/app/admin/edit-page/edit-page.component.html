@@ -24,10 +24,8 @@
   <button
   class="btn btn-primary"
   type="submit"
-  [disabled]="form.invalid"
-  >
-  Обновить
-  </button>
+  [disabled]="form.invalid || submitted"
+  >Обновить</button>
 
   </form>
 </div>
